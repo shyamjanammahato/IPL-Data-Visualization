@@ -21,6 +21,7 @@ function topTenEconomicalBowler(matches, deliveries) {
       }
     }
   });
+  // console.log(result);
   let sortable = [];
   for (let bowler in result) {
     let economy = (

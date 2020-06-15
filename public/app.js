@@ -9,10 +9,10 @@ fetchAndVisualizeData();
 function visualizeData(data) {
   visualizeMatchesPlayedPerYear(data.matchesPlayedPerYear);
   visualizeMatchesWonPerTeam(data.matchesWonPerTeam);
-  visualizeRunsConcededPerTeam(data.runsConcededPerTeam);
-  visualizetopTenEconomicalBowler(data.topTenEconomicalBowler);
+  visualizeRunsConcededPerTeam(data.runsConcededPerTeam); // 2016
+  visualizetopTenEconomicalBowler(data.topTenEconomicalBowler); //2015
   visualizematchesWonPerVenue(data.matchesWonPerVenue);
-  // visualizetopScorerEachYear(data.topScorerEachYear);
+  visualizetopTenScorer(data.topTenScorer); // 2019
   return;
 }
 
@@ -21,7 +21,7 @@ function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
   for (let year in matchesPlayedPerYear) {
     seriesData.push([year, matchesPlayedPerYear[year]]);
   }
-  console.log(seriesData);
+  // console.log(seriesData);
   Highcharts.chart("matches-played-per-year", {
     chart: {
       type: "column",
@@ -122,7 +122,7 @@ function visualizeRunsConcededPerTeam(runsConcededPerTeam) {
       type: "column",
     },
     title: {
-      text: "Runs Conceded By Each Team In 2016",
+      text: "Extra Runs Conceded By Each Team In 2016",
     },
     subtitle: {
       text:
@@ -198,8 +198,8 @@ function visualizematchesWonPerVenue(matchesWonPerVenue) {
     }
     finalResult.push({ name: teams[i], data: tempArr });
   }
-  console.log(venues);
-  console.log(finalResult);
+  // console.log(venues);
+  // console.log(finalResult);
   Highcharts.chart("matches-won-by-each-team-per-venue", {
     chart: {
       type: "bar",
@@ -228,38 +228,36 @@ function visualizematchesWonPerVenue(matchesWonPerVenue) {
   });
 }
 
-// function visualizetopScorerEachYear(topScorerEachYear) {
-//   const seriesData = [];
-//   Object.keys(topScorerEachYear).map((season) => {
-//     seriesData.push([Number(season), topScorerEachYear[season]]);
-//   });
-
-//   console.log(seriesData);
-//   Highcharts.chart("top-scorer-over-all-season", {
-//     chart: {
-//       type: "column",
-//     },
-//     title: {
-//       text: "Top Economical Bowlers in 2015 Season",
-//     },
-//     subtitle: {
-//       text:
-//         'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>',
-//     },
-//     xAxis: {
-//       type: "category",
-//     },
-//     yAxis: {
-//       min: 0,
-//       title: {
-//         text: "Runs",
-//       },
-//     },
-//     series: [
-//       {
-//         name: "Runs",
-//         data: seriesData,
-//       },
-//     ],
-//   });
-// }
+function visualizetopTenScorer(topTenScorer) {
+  const seriesData = [];
+  Object.values(topTenScorer).map((entry) =>
+    seriesData.push([entry.batsman, Number(entry.runs)])
+  );
+  Highcharts.chart("top-ten-scorer-in-2019", {
+    chart: {
+      type: "column",
+    },
+    title: {
+      text: "Top 10 Scorer in 2019 Season",
+    },
+    subtitle: {
+      text:
+        'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>',
+    },
+    xAxis: {
+      type: "category",
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: "Runs",
+      },
+    },
+    series: [
+      {
+        name: "Runs",
+        data: seriesData,
+      },
+    ],
+  });
+}

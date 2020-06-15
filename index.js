@@ -5,7 +5,7 @@ const matchesWonPerTeam = require("./ipl/matchesWonPerTeam");
 const extraRunsConcedPerTeamYearWise = require("./ipl/extraRunsConcedPerTeamYearWise");
 const topTenEconomicalBowler = require("./ipl/topTenEconomicalBowler");
 const matchesWonByTeamPerVenue = require("./ipl/matchesWonByTeamPerVenue");
-const topScorerEachYear = require("./ipl/topScorerEachYear");
+const topTenScorer = require("./ipl/topTenScorer");
 
 const MATCHES_FILE_PATH = "./csv_data/matches.csv";
 const DELIVERIES_FILE_PATH = "./csv_data/deliveries.csv";
@@ -28,13 +28,14 @@ function main() {
             deliveries
           );
           let economicalBowler = topTenEconomicalBowler(matches, deliveries);
-          // let topScorer = topScorerEachYear(matches, deliveries);
+          let topScorer = topTenScorer(matches, deliveries);
           saveData(
             result,
             matchesWon,
             runsConceded,
             economicalBowler,
-            matchesWonPerVenue
+            matchesWonPerVenue,
+            topScorer
           );
         });
     });
@@ -45,14 +46,15 @@ function saveData(
   matchesWon,
   runsConceded,
   economicalBowler,
-  matchesWonPerVenue
+  matchesWonPerVenue,
+  topScorer
 ) {
   jsonData["matchesPlayedPerYear"] = result;
   jsonData["matchesWonPerTeam"] = matchesWon;
   jsonData["runsConcededPerTeam"] = runsConceded;
   jsonData["topTenEconomicalBowler"] = economicalBowler;
   jsonData["matchesWonPerVenue"] = matchesWonPerVenue;
-  // jsonData["topScorerEachYear"] = topScorer;
+  jsonData["topTenScorer"] = topScorer;
 
   const jsonString = JSON.stringify(jsonData);
   fs.writeFile(JSON_OUTPUT_FILE_PATH, jsonString, "utf8", (err) => {
