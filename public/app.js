@@ -151,7 +151,6 @@ function visualizetopTenEconomicalBowler(topTenEconomicalBowler) {
   Object.values(topTenEconomicalBowler).map((entry) =>
     seriesData.push([entry.bowler, Number(entry.economy)])
   );
-
   Highcharts.chart("top-10-economical-bowler-in-2015", {
     chart: {
       type: "column",
@@ -199,6 +198,8 @@ function visualizematchesWonPerVenue(matchesWonPerVenue) {
     }
     finalResult.push({ name: teams[i], data: tempArr });
   }
+  console.log(venues);
+  console.log(finalResult);
   Highcharts.chart("matches-won-by-each-team-per-venue", {
     chart: {
       type: "bar",
