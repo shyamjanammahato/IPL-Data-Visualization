@@ -1,9 +1,9 @@
-var express = require("../node_modules/express");
+var express = require("./node_modules/express");
 var path = require("path");
-var bodyParser = require("../node_modules/body-parser");
-var data = require("../public/data.json"); // your json file path
+var bodyParser = require("./node_modules/body-parser");
+var data = require("./public/data.json"); // your json file path
 var indexRouter = require("./routes/index");
-var cors = require("../node_modules/cors");
+var cors = require("./node_modules/cors");
 
 var port = process.env.PORT || 3000;
 var app = express();
