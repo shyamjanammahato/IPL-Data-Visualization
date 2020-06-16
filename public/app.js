@@ -9,7 +9,7 @@ fetchAndVisualizeData();
 function visualizeData(data) {
   visualizeMatchesPlayedPerYear(data.matchesPlayedPerYear);
   visualizeMatchesWonPerTeam(data.matchesWonPerTeam);
-  visualizeRunsConcededPerTeam(data.runsConcededPerTeam); // 2016
+  // visualizeRunsConcededPerTeam(data.runsConcededPerTeam); // 2016
   visualizetopTenEconomicalBowler(data.topTenEconomicalBowler); //2015
   visualizematchesWonPerVenue(data.matchesWonPerVenue);
   visualizetopTenScorer(data.topTenScorer); // 2019
@@ -21,7 +21,6 @@ function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
   for (let year in matchesPlayedPerYear) {
     seriesData.push([year, matchesPlayedPerYear[year]]);
   }
-  // console.log(seriesData);
   Highcharts.chart("matches-played-per-year", {
     chart: {
       type: "column",
@@ -116,7 +115,6 @@ function visualizeRunsConcededPerTeam(runsConcededPerTeam) {
   for (let team in runsConcededPerTeam) {
     seriesData.push([team, runsConcededPerTeam[team]]);
   }
-
   Highcharts.chart("extra-runs-per-team-in-2016", {
     chart: {
       type: "column",
@@ -198,8 +196,6 @@ function visualizematchesWonPerVenue(matchesWonPerVenue) {
     }
     finalResult.push({ name: teams[i], data: tempArr });
   }
-  // console.log(venues);
-  // console.log(finalResult);
   Highcharts.chart("matches-won-by-each-team-per-venue", {
     chart: {
       type: "bar",
@@ -260,4 +256,17 @@ function visualizetopTenScorer(topTenScorer) {
       },
     ],
   });
+}
+
+function showExtraRuns() {
+  let season = document.getElementById("season").value;
+  if (season == 0) {
+    alert("Please select season.");
+  } else {
+    fetch("http://127.0.0.1:3000/economy?year=" + season)
+      .then((response) => response.json())
+      .then((json) => {
+        visualizeRunsConcededPerTeam(json);
+      });
+  }
 }
