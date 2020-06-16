@@ -5,7 +5,7 @@ var data = require("../public/data.json"); // your json file path
 var indexRouter = require("./routes/index");
 var cors = require("../node_modules/cors");
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 var app = express();
 
 app.use(

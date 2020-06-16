@@ -1,14 +1,14 @@
 {
   "name": "ipl_project",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "IPL project to show dynamic visualisations based on user input",
   "main": "index.js",
   "scripts": {
     "ipl": "node index.js",
     "start": "http-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shyam Janam Mahato",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
