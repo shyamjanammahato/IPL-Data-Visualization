@@ -8,12 +8,12 @@ var cors = require("../node_modules/cors");
 var port = process.env.PORT || 3000;
 var app = express();
 
-app.use(
-  cors({
-    origin: ["http://localhost:8080", "http://127.0.0.1:8080"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["http://localhost:8080", "http://127.0.0.1:8080"],
+//     credentials: true,
+//   })
+// );
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

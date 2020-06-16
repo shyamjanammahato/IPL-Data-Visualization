@@ -263,7 +263,7 @@ function showExtraRuns() {
   if (season == 0) {
     alert("Please select season.");
   } else {
-    fetch("http://127.0.0.1:3000/extraruns?year=" + season)
+    fetch("/extraruns?year=" + season)
       .then((response) => response.json())
       .then((json) => {
         visualizeRunsConcededPerTeam(json, season);
@@ -276,7 +276,7 @@ function showEconomicalBowler() {
   if (season == 0) {
     alert("Please select season.");
   } else {
-    fetch("http://127.0.0.1:3000/economy?year=" + season)
+    fetch("/economy?year=" + season)
       .then((response) => response.json())
       .then((json) => {
         visualizetopTenEconomicalBowler(json, season);
