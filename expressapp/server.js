@@ -29,10 +29,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/", indexRouter);
 
-/* GET home page. */
-app.get("/economy", function (req, res, next) {
+/* GET extra runs. */
+app.get("/extraruns", function (req, res, next) {
   const year = req.query.year;
   const result = data.runsConcededPerTeam[year];
+  res.send(result);
+});
+
+/* GET economical bowler. */
+app.get("/economy", function (req, res, next) {
+  const year = req.query.year;
+  const result = data.topTenEconomicalBowler[year];
   res.send(result);
 });
 

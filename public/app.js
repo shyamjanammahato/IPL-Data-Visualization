@@ -10,7 +10,7 @@ function visualizeData(data) {
   visualizeMatchesPlayedPerYear(data.matchesPlayedPerYear);
   visualizeMatchesWonPerTeam(data.matchesWonPerTeam);
   // visualizeRunsConcededPerTeam(data.runsConcededPerTeam); // 2016
-  visualizetopTenEconomicalBowler(data.topTenEconomicalBowler); //2015
+  // visualizetopTenEconomicalBowler(data.topTenEconomicalBowler); //2015
   visualizematchesWonPerVenue(data.matchesWonPerVenue);
   visualizetopTenScorer(data.topTenScorer); // 2019
   return;
@@ -110,7 +110,7 @@ function visualizeMatchesWonPerTeam(matchesWonPerTeam) {
   });
 }
 
-function visualizeRunsConcededPerTeam(runsConcededPerTeam) {
+function visualizeRunsConcededPerTeam(runsConcededPerTeam, season) {
   const seriesData = [];
   for (let team in runsConcededPerTeam) {
     seriesData.push([team, runsConcededPerTeam[team]]);
@@ -120,7 +120,7 @@ function visualizeRunsConcededPerTeam(runsConcededPerTeam) {
       type: "column",
     },
     title: {
-      text: "Extra Runs Conceded By Each Team In 2016",
+      text: "Extra Runs Conceded By Each Team In " + season,
     },
     subtitle: {
       text:
@@ -144,17 +144,17 @@ function visualizeRunsConcededPerTeam(runsConcededPerTeam) {
   });
 }
 
-function visualizetopTenEconomicalBowler(topTenEconomicalBowler) {
+function visualizetopTenEconomicalBowler(topTenEconomicalBowler, season) {
   const seriesData = [];
-  Object.values(topTenEconomicalBowler).map((entry) =>
-    seriesData.push([entry.bowler, Number(entry.economy)])
-  );
+  Object.entries(topTenEconomicalBowler).map((key, value) => {
+    seriesData.push(key);
+  });
   Highcharts.chart("top-10-economical-bowler-in-2015", {
     chart: {
       type: "column",
     },
     title: {
-      text: "Top Economical Bowlers in 2015 Season",
+      text: "Top Economical Bowlers in " + season,
     },
     subtitle: {
       text:
@@ -263,10 +263,23 @@ function showExtraRuns() {
   if (season == 0) {
     alert("Please select season.");
   } else {
+    fetch("http://127.0.0.1:3000/extraruns?year=" + season)
+      .then((response) => response.json())
+      .then((json) => {
+        visualizeRunsConcededPerTeam(json, season);
+      });
+  }
+}
+
+function showEconomicalBowler() {
+  let season = document.getElementById("bowler_season").value;
+  if (season == 0) {
+    alert("Please select season.");
+  } else {
     fetch("http://127.0.0.1:3000/economy?year=" + season)
       .then((response) => response.json())
       .then((json) => {
-        visualizeRunsConcededPerTeam(json);
+        visualizetopTenEconomicalBowler(json, season);
       });
   }
 }

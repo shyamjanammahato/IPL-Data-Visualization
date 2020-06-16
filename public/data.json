@@ -268,18 +268,152 @@
       "Kings XI Punjab": 115
     }
   },
-  "topTenEconomicalBowler": [
-    { "bowler": "RN ten Doeschate", "economy": "4.00" },
-    { "bowler": "J Yadav", "economy": "4.14" },
-    { "bowler": "V Kohli", "economy": "5.45" },
-    { "bowler": "R Ashwin", "economy": "5.87" },
-    { "bowler": "S Nadeem", "economy": "6.14" },
-    { "bowler": "Parvez Rasool", "economy": "6.20" },
-    { "bowler": "MC Henriques", "economy": "6.56" },
-    { "bowler": "Z Khan", "economy": "6.58" },
-    { "bowler": "M Vijay", "economy": "7.00" },
-    { "bowler": "GB Hogg", "economy": "7.05" }
-  ],
+  "topTenEconomicalBowler": {
+    "2008": {
+      "TM Dilshan": 3,
+      "DJ Thornely": 5.71,
+      "BAW Mendis": 6,
+      "RG Sharma": 6.5,
+      "SC Ganguly": 6.6,
+      "SM Pollock": 6.67,
+      "Sohail Tanvir": 6.68,
+      "DL Vettori": 6.75,
+      "GD McGrath": 6.78,
+      "IK Pathan": 6.81
+    },
+    "2009": {
+      "R Ashwin": 3.5,
+      "RS Bopara": 3.75,
+      "CK Langeveldt": 3.75,
+      "AM Rahane": 5,
+      "M Muralitharan": 5.34,
+      "JP Duminy": 5.49,
+      "B Lee": 5.65,
+      "A Singh": 5.71,
+      "M Morkel": 5.71,
+      "A Kumble": 5.97
+    },
+    "2010": {
+      "V Sehwag": 4.06,
+      "ND Doshi": 4.25,
+      "AJ Finch": 4.29,
+      "B Akhil": 6,
+      "R Ashwin": 6.42,
+      "A Kumble": 6.66,
+      "M Kartik": 6.69,
+      "AB Dinda": 6.69,
+      "WPUJC Vaas": 6.73,
+      "JP Duminy": 6.73
+    },
+    "2011": {
+      "S Rana": 3,
+      "JP Faulkner": 5,
+      "R Sharma": 5.56,
+      "M Manhas": 6,
+      "S Dhawan": 6,
+      "SS Mundhe": 6,
+      "DL Vettori": 6.1,
+      "AG Murtaza": 6.1,
+      "B Kumar": 6.18,
+      "AA Chavan": 6.2
+    },
+    "2012": {
+      "AG Murtaza": 5.5,
+      "SP Narine": 5.61,
+      "L Balaji": 5.63,
+      "RE van der Merwe": 6,
+      "LR Shukla": 6,
+      "DW Steyn": 6.21,
+      "A Chandila": 6.21,
+      "AB McDonald": 6.3,
+      "WD Parnell": 6.33,
+      "SL Malinga": 6.38
+    },
+    "2013": {
+      "AC Gilchrist": 0,
+      "BJ Hodge": 3,
+      "RG Sharma": 4.5,
+      "RV Gomez": 5,
+      "Bipul Sharma": 5.25,
+      "Anand Rajan": 5.38,
+      "SP Narine": 5.52,
+      "Parvez Rasool": 5.8,
+      "VS Malik": 5.9,
+      "DW Steyn": 5.96
+    },
+    "2014": {
+      "Ankit Sharma": 5.5,
+      "R Rampaul": 6.17,
+      "AR Patel": 6.42,
+      "R Tewatia": 6.56,
+      "Harbhajan Singh": 6.64,
+      "SP Narine": 6.65,
+      "NM Coulter-Nile": 6.75,
+      "P Kumar": 6.75,
+      "Shakib Al Hasan": 6.78,
+      "B Kumar": 6.81
+    },
+    "2015": {
+      "RN ten Doeschate": 4,
+      "J Yadav": 4.14,
+      "V Kohli": 5.45,
+      "R Ashwin": 5.87,
+      "S Nadeem": 6.14,
+      "Parvez Rasool": 6.2,
+      "MC Henriques": 6.56,
+      "Z Khan": 6.58,
+      "M Vijay": 7,
+      "GB Hogg": 7.05
+    },
+    "2016": {
+      "N Rana": 3,
+      "Sachin Baby": 4.8,
+      "MR Marsh": 5,
+      "YK Pathan": 5.5,
+      "JW Hastings": 5.55,
+      "S Gopal": 6.33,
+      "CH Gayle": 6.5,
+      "A Zampa": 6.88,
+      "Mustafizur Rahman": 7,
+      "KS Williamson": 7
+    },
+    "2017": {
+      "NB Singh": 4.5,
+      "Mohammad Nabi": 5.36,
+      "R Tewatia": 5.67,
+      "Avesh Khan": 6,
+      "P Negi": 6.28,
+      "Washington Sundar": 6.3,
+      "Harbhajan Singh": 6.56,
+      "GJ Maxwell": 6.63,
+      "S Nadeem": 6.67,
+      "Rashid Khan": 6.81
+    },
+    "2018": {
+      "I Sodhi": 6,
+      "L Ngidi": 6.73,
+      "YK Pathan": 7,
+      "Rashid Khan": 7.01,
+      "N Rana": 7.3,
+      "M Ur Rahman": 7.31,
+      "A Mishra": 7.32,
+      "KH Pandya": 7.34,
+      "JJ Bumrah": 7.54,
+      "S Lamichhane": 7.58
+    },
+    "2019": {
+      "S Dube": 5.4,
+      "SK Raina": 6,
+      "STR Binny": 6.42,
+      "RA Jadeja": 6.53,
+      "RD Chahar": 6.74,
+      "M Ali": 6.79,
+      "R Tewatia": 6.79,
+      "Rashid Khan": 6.81,
+      "A Mishra": 6.82,
+      "A Roy": 7
+    }
+  },
   "matchesWonPerVenue": {
     "Rajiv Gandhi International Stadium, Uppal": {
       "Sunrisers Hyderabad": 25,
