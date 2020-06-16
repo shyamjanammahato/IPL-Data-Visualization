@@ -1,9 +1,9 @@
-var express = require("express");
+var express = require("../node_modules/express");
 var path = require("path");
-var bodyParser = require("body-parser");
-var data = require("../../ipl/public/data.json"); // your json file path
+var bodyParser = require("../node_modules/body-parser");
+var data = require("../public/data.json"); // your json file path
 var indexRouter = require("./routes/index");
-var cors = require("cors");
+var cors = require("../node_modules/cors");
 
 var port = 3000;
 var app = express();
@@ -45,5 +45,5 @@ app.get("/economy", function (req, res, next) {
 
 //listen connection
 app.listen(port, function () {
-  console.log("Server satrted at port" + port);
+  console.log("Server satrted at port: " + port);
 });
