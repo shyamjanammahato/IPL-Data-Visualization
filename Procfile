@@ -1,1 +1,1 @@
-web: http-server
+web: index.js
