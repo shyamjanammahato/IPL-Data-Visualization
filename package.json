@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ipl": "node index.js",
-    "start": "http-server"
+    "start": "node express-server/server.js"
   },
   "keywords": [],
   "author": "Shyam Janam Mahato",
